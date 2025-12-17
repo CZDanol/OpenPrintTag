@@ -134,6 +134,10 @@ def opt_check(rec: Record, tag_uid: bytes = None):
 
     deduce_uuid("instance_uuid", instance_generated_uuid, report_deduce_fail=False)
 
+    # Other checks
+    if ("material_type" not in main_data) and ("material_abbreviation" not in main_data):
+        warnings.append("Either 'material_type' or 'material_abbreviation' should be present")
+
     return {
         "warnings": warnings,
         "errors": errors,

@@ -100,6 +100,7 @@
   description:
     - Abbreviation of the material name, for UI purposes (footers, dashboards, ...).
     - If not present, the material inherits the abbreviation from the material type.
+    - SHOULD be present if `material_type` is not defined.
 
 - key: 11
   name: brand_name
