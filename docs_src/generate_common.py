@@ -1,11 +1,11 @@
-import shutil
 import os
+import shutil
+import subprocess
 import sys
+
 import jinja2
 import jinja2.ext
 import jinja2.nodes
-import subprocess
-
 from vars import *
 
 # Re-create output directory
@@ -81,11 +81,14 @@ env.add_extension(PythonCodeExtension)
 def show_example(prompt, language="yaml"):
     r = io.StringIO("")
 
-    nice_prompt = prompt.replace(">", "").replace(" | ", "\n> | ")
+    nice_prompt = prompt.replace(">", "")
+    nice_prompt = nice_prompt.replace(" | ", "\n> | ")
+    nice_prompt = nice_prompt.replace("$DOCS_OUT/", "")
     r.write(f"> ```bash\n>{nice_prompt}\n> ```\n\n")
 
     prompt = prompt.replace(">", f"python3 {utils_dir}/")
     prompt = prompt.replace("--config-file=", f"--config-file={os.path.abspath(data_dir)}/")
+    prompt = prompt.replace("$DOCS_OUT", os.path.abspath(out_dir))
     prompt = "set -o pipefail; " + prompt
     output = subprocess.run(prompt, shell=True, stdout=subprocess.PIPE, check=False, cwd=dir, executable="/bin/bash")
 
