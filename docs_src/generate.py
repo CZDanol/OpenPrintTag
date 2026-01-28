@@ -1,9 +1,10 @@
-from generate_common import gen_doc_file, env, Column, dir, out_dir
-import vars
-import shutil
 import io
-import yaml
 import os
+import shutil
+
+import vars
+import yaml
+from generate_common import Column, dir, env, gen_doc_file, out_dir
 
 
 def gen_material_tag_table():
@@ -88,6 +89,7 @@ gen_doc_file("terminology")
 gen_doc_file("nfc_data_format")
 gen_doc_file("nfc_technical_details")
 gen_doc_file("examples")
+gen_doc_file("qr_codes")
 gen_doc_file("contributing")
 gen_doc_file("material_types")
 gen_doc_file("material_tags")
