@@ -27,6 +27,41 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+
+  <style>
+    /* A few tweaks to make the page print nicely */
+    @media print {
+
+      .sidebar,
+      .nav,
+      .github-corner,
+      .app-nav {
+        display: none !important;
+      }
+
+      section.content {
+        position: static !important;
+        padding: 0 !important;
+        width: 100% !important;
+        left: 0 !important;
+      }
+
+      article {
+        max-width: none !important;
+      }
+
+      main {
+        width: auto !important;
+      }
+
+      pre,
+      blockquote,
+      code {
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+      }
+    }
+  </style>
 </body>
 
 </html>
