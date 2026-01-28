@@ -201,8 +201,8 @@ class Record:
     def _setup_regions(self):
         if "meta_fields" not in self.config.__dict__:
             # If meta region is not present, we only have the main region which spans the entire payload
-            self.main_region = Region(0, self.payload, Fields.from_file(os.path.join(self.config_dir, self.config.main_fields)))
-            self.regions = {"main", self.main_region}
+            self.main_region = Region(self, 0, self.payload, Fields.from_file(os.path.join(self.config_dir, self.config.main_fields)))
+            self.regions = {"main": self.main_region}
             return
 
         meta_io = io.BytesIO(self.payload)
