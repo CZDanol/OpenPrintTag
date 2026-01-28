@@ -1,12 +1,13 @@
-import os
-import ndef
-import yaml
-import cbor2
 import io
+import os
 import types
 import typing
 
-from fields import Fields, EncodeConfig
+import base45
+import cbor2
+import ndef
+import yaml
+from fields import EncodeConfig, Fields
 
 
 class Region:
@@ -64,6 +65,9 @@ class Region:
         return self.update(data, clear=True)
 
     def update(self, update_fields: dict[str, any], update_unknown_fields: dict[str, str] = {}, remove_fields: list[str] = [], clear: bool = False):
+        if self.record.read_only:
+            raise Exception("Record is read-only")
+
         if len(update_fields) == 0 and len(remove_fields) == 0 and not clear:
             # Nothing to do
             return
@@ -92,6 +96,7 @@ class Record:
     config: types.SimpleNamespace
     config_dir: str
     uri: str = None
+    read_only: bool = False
 
     meta_region: Region = None
     main_region: Region = None
@@ -163,6 +168,33 @@ class Record:
 
                 else:
                     raise Exception(f"Did not find a record of type '{self.config.mime_type}'")
+
+            case "qr":
+                data_bytes = bytes(data)
+
+                prefix = b"OPTAG*"
+                if data_bytes.startswith(prefix):
+                    pos = 0
+
+                else:
+                    prefix = b"#" + prefix
+                    pos = data_bytes.rfind(prefix)
+                    if pos < 0:
+                        raise Exception(f"Did not find the '{prefix}' prefix in the data")
+
+                    self.uri = bytes(data[0:pos]).decode()
+
+                pos += len(prefix)
+
+                # Strip, some QR scanners leave \n at the end of the data
+                decoded_data = base45.b45decode(bytes(data[pos:]).removesuffix(b"\n"))
+
+                self.payload_offset = pos
+                self.payload = memoryview(decoded_data)
+
+                # QR codes cannot be updated
+                # The base45 encoding and dynamic size makes it impossible
+                self.read_only = True
 
             case _:
                 raise Exception(f"Unknown root type '{self.config.root}'")
