@@ -129,10 +129,10 @@
                 "filament_diameter": {
                     "$ref": "field_types.schema.json#/definitions/number"
                 },
-                "shore_hardness_a": {
+                "hardness_shore_a": {
                     "$ref": "field_types.schema.json#/definitions/int"
                 },
-                "shore_hardness_d": {
+                "hardness_shore_d": {
                     "$ref": "field_types.schema.json#/definitions/int"
                 },
                 "min_nozzle_diameter": {
