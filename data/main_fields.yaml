@@ -290,7 +290,7 @@
   name: filament_diameter
   type: number
   unit: mm
-  example: 2.75
+  example: 2.85
   category: fff
   description:
     - Diameter of the filament, in mm.
