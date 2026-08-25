@@ -108,9 +108,9 @@ Some entities referenced in the data (see [Terminology](terminology.md)) can be 
 
 #### 3.2.0.3 Example: Brand renaming
 If a brand decides to change name but wants to keep the original `brand_uuid` that was auto-derived from its name, it needs to start adding `brand_uuid` field with the original UUID:
-1. `brand_name = Prusament` (present in the data), `brand_uuid = ae5ff34e-298e-50c9-8f77-92a97fb30b0` (not present, can be automatically derived)
+1. `brand_name = Prusament` (present in the data), `brand_uuid = ae5ff34e-298e-50c9-8f77-92a97fb30b09` (not present, can be automatically derived)
 1. Brand gets renamed to `Pepament`
-1. `brand_name = Pepament` (present in the data), `brand_uuid = ae5ff34e-298e-50c9-8f77-92a97fb30b0` (present in the data)
+1. `brand_name = Pepament` (present in the data), `brand_uuid = ae5ff34e-298e-50c9-8f77-92a97fb30b09` (present in the data)
 
 
 ### 3.2.1 UUID derivation algorithm
