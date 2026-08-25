@@ -66,7 +66,7 @@ def gen_material_tag_table():
 
 env.globals["material_tag_table"] = gen_material_tag_table
 
-env.globals["material_type_columns"] = [
+env.globals["fff_material_type_columns"] = [
     Column(field="key", title="Key"),
     Column(field="abbreviation", title="Name", transform=lambda x: f"`{x}`"),
     Column(field="name", title="Full name"),
@@ -89,7 +89,7 @@ gen_doc_file("nfc_data_format")
 gen_doc_file("nfc_technical_details")
 gen_doc_file("examples")
 gen_doc_file("contributing")
-gen_doc_file("material_types")
+gen_doc_file("fff_material_types")
 gen_doc_file("material_tags")
 gen_doc_file("material_certifications")
 gen_doc_file("physical_spec")

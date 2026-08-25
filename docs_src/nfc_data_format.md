@@ -184,7 +184,7 @@ The main section contains material information that does not change during the p
 {{ enum_table("material_class_enum") }}
 
 #### 5.1.4 `material_type`
-See [Material types](/material_types)
+See [FFF material types](/fff_material_types)
 
 #### 5.1.5 `tags`
 See [Material tags](/material_tags)

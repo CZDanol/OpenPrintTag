@@ -3,18 +3,18 @@ classDiagram
 		shore_hardneess
 		nozzle_print_temperature
 	}
-	class MaterialType {
+	class FFFMaterialType {
 
 	}
 	class Material {
 		properties: MaterialProperties
-		type: MaterialType
+		type: FFFMaterialType
 		brand
 		name
 		abbreviation
 		primary_color
 	}
-	MaterialType --> Material
+	FFFMaterialType --> Material
 	MaterialProperties --> Material
 
 	class MaterialContainer {
