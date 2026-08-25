@@ -5,9 +5,9 @@ The OpenPrintTag format is based on the following entity model (not all fields a
 
 1. `Material` represents a material with some color and properties.
 	1. For example "Prusament PLA Prusa Galaxy Black".
-1. `MaterialType` is used to categorize materials into broad, strictly and universally defined categories.
+1. `FFFMaterialType` is used to categorize materials into broad, strictly and universally defined categories.
 	1. For FFF, base polymers are used for the categorization.
-	1. SLA resins are not clearly categorizable, so they don't use `MaterialType`.
+	1. SLA resins are not clearly categorizable, so they don't use `FFFMaterialType`.
 1. `MaterialPackage` represents a material that is packaged in some quantity (in case of FFF, the material is also extruded with a specific diameter) and put in a container.
 	1. For example [Prusament PLA Prusa Galaxy Black 1kg](https://www.prusa3d.com/cs/produkt/prusament-pla-prusa-galaxy-black-1kg/).
 1. `MaterialPackageInstance` represents a single specific spool of filament (or a single specific bottle of resin in case of SLA)
