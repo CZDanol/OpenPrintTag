@@ -286,15 +286,19 @@
   required: recommended
   description: Density of the material.
 
-- key: 30
-  name: filament_diameter
-  type: number
-  unit: mm
-  example: 2.85
+# Removed 30 - filament_diameter, which expressed the diameter in mm.
+# Replaced by filament_diameter_v2 (key 61) using µm, to match the architecture
+
+- key: 61
+  name: filament_diameter_v2
+  type: int
+  unit: µm
+  example: 2850
   category: fff
   description:
-    - Diameter of the filament, in mm.
-    - If not present, 1.75 mm is assumed.
+    - Diameter of the filament, in µm.
+    - If not present, 1750 µm is assumed.
+    - "**Note:** Replaces the removed key 30 (`filament_diameter`), which was in mm."
 
 # Removed 18
 
@@ -316,15 +320,19 @@
     - Hardness of the material on the Shore D hardness scale (suitable for harder materials).
     - "**Note:** There is no 1:1 mapping between A and D scales, different materials can have different values on one scale even though they are the same on the other."
 
-- key: 33
-  name: min_nozzle_diameter
-  type: number
-  example: 0.4
-  unit: mm
+# Removed 33 - min_nozzle_diameter, which expressed the diameter in mm.
+# Replaced by min_nozzle_diameter_v2 (key 62) using µm, to match the architecture
+
+- key: 62
+  name: min_nozzle_diameter_v2
+  type: int
+  unit: µm
+  example: 400
   category: fff
   description:
     - Filaments can contain particles that would clog smaller nozzles.
-    - This field specifies minimum nozzle diameter recommended for printing this material.
+    - This field specifies minimum nozzle diameter recommended for printing this material, in µm.
+    - "**Note:** Replaces the removed key 33 (`min_nozzle_diameter`), which was in mm."
 
 - key: 34
   name: min_print_temperature
@@ -506,4 +514,4 @@
   description:
     - Recommended drying time (at `drying_temperature`).
 
-# First unused key: 61
+# First unused key: 63
