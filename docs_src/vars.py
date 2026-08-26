@@ -1,5 +1,7 @@
 import os
 
+arch = "https://arch.openprinttag.org"
+
 repo = "https://github.com/OpenPrintTag/openprinttag-specification"
 dir = os.path.dirname(__file__)
 root_dir = f"{dir}/.."

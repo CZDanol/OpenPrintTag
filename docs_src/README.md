@@ -8,7 +8,7 @@ If you are interested in participating in the project, please see [Contributing]
 
 ## Quick links
 * [OpenPrintTag main website](//openprinttag.org)
-* [OpenPrintTag Architecture website](//arch.openprinttag.org)
+* [OpenPrintTag Architecture website]({{arch}})
 * [OpenPrintTag Specification repository]({{repo}})
 * [Data format specification](nfc_data_format.md)
 * Electrical & hardware specification - will be added soon™
