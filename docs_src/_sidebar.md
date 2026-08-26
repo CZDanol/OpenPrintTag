@@ -7,4 +7,5 @@
 - [Technical details](/nfc_technical_details)
 - [Physical specification](/physical_spec)
 - [Examples](/examples)
+- [Changelog](/changelog)
 - [Contributing](/contributing)

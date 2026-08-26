@@ -83,6 +83,7 @@ env.globals["material_certification_columns"] = [
 gen_doc_file("_navbar")
 gen_doc_file("_sidebar")
 gen_doc_file("README")
+gen_doc_file("changelog")
 
 gen_doc_file("terminology")
 gen_doc_file("nfc_data_format")
