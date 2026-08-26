@@ -59,7 +59,8 @@ def gen_material_tag_table():
             r.write("<br>".join(desc_lines))
             r.write("</td></tr>")
 
-    r.write("</table>")
+    r.write("</table>\n\n")
+    r.write(f"*This table was automatically generated from [`tags_enum.yaml`]({vars.repo}/blob/main/data/tags_enum.yaml) and [`tag_categories_enum.yaml`]({vars.repo}/blob/main/data/tag_categories_enum.yaml)*\n\n")
 
     return r.getvalue()
 
