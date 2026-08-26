@@ -94,7 +94,7 @@
 1. `color_lab` fields are encoded as a CBOR array of 3 `number` type elements
 
 ### 3.2 UUIDs
-Some entities referenced in the data (see [Terminology](terminology.md)) can be identified by a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). The UUID MAY be explicitly specified through a `XX_uuid` field, however that might not be desirable due to space constraints. As an alternative, the following algorithm defines a way to derive UUIDs from other fields.
+Some entities referenced in the data can be identified by a [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier). The UUID MAY be explicitly specified through a `XX_uuid` field, however that might not be desirable due to space constraints. As an alternative, the following algorithm defines a way to derive UUIDs from other fields.
 
 #### 3.2.0.1 When reading a UUID
 1. First, the program MUST check if an appropriate `XX_uuid` field is present in the data. If so, the program MUST use that UUID.
